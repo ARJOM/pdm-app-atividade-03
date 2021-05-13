@@ -1,19 +1,19 @@
 import React from 'react';
 import {Text, View, Button } from 'react-native';
 
-const App  = ({ navigation }) => {
+const Home = ({ navigation }) =>  {
     return (
       <View>
-        <Text>bem vindo ao App!</Text>
+        <Text>Bem vindo a Home!</Text>
 
         <Button
-          title="Home"
+          title="App"
           onPress={() =>
-            navigation.navigate('Home')
+            navigation.navigate('App')
           }
         />
       </View>
     );
 }
 
-export default App;
+export default Home;
