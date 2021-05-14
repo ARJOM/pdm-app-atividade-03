@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {TextInput, View, Button} from 'react-native';
 import api from './services/api';
+import {setId, setToken} from './services/persistToken';
 
 const Login = ({navigation}) => {
   const [email, onChangeEmail] = useState('');
@@ -8,12 +9,13 @@ const Login = ({navigation}) => {
 
   const handleLogin = () => {
     const data = {email, password: senha};
-    console.log(data);
     api
       .post('login', data)
       .then(res => {
-        // TODO passar o token para o context
-        console.log(res.data.token);
+        const token = res.data.token;
+        const {id} = res.data;
+        setToken(token);
+        setId(id);
         navigation.navigate('Home');
       })
       .catch(error => {
