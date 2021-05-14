@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home';
 import App from './App';
 import Login from './Login';
+import Disciplina from './Disciplina';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const Routes = () => {
             name="Home"
             component={Home}
           />
+          <Stack.Screen name="Disciplina" component={Disciplina} />
         </Stack.Navigator>
       </NavigationContainer>
     );
